@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waheed Music Official</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/W M O icon.png" alt="Waheed Music Official Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#beats">Beats</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Elevate Your Sound with Premium Beats</h1>
+        <a href="#beats" class="cta-button">Browse Beats</a>
+    </section>   
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Waheed Music Official, where we provide high-quality instrumental beats for your projects.</p>
+    </section>
+
+    <section id="beats">
+        <h2>Featured Beats</h2>
+        <div class="beat">
+            <h3>Beat Title Ma Bestie</h3>
+            <audio controls>
+                <source src="audio/Ma Bestie-TonyBeatz-(Official-Audio).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Price: $10</p>
+            <button class="buy-button">Buy Now</button>
+            <h2>Featured Beats</h2>
+        <div class="beat">
+            <h3>Beat Title Forever Vibe</h3>
+            <audio controls>
+                <source src="Instrumentals/Forever Vibe.mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Price: $10</p>
+            <button class="buy-button">Buy Now</button>
+            <h2>Featured Beats</h2>
+        <div class="beat">
+            <h3>Beat Title Little Test of Your Love</h3>
+            <audio controls>
+                <source src="Instrumentals/Little Test of Your Love.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Price: $10</p>
+            <button class="buy-button">Buy Now</button>
+            <h2>Featured Beats</h2>
+        <div class="beat">
+            <h3>Beat Title No Way, She's the One</h3>
+            <audio controls>
+                <source src="Instrumentals/No Way, She's the One.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Price: $10</p>
+            <button class="buy-button">Buy Now</button>
+            <h2>Featured Beats</h2>
+        <div class="beat">
+            <h3>Beat Title Tony Beatz</h3>
+            <audio controls>
+                <source src="Instrumentals/Tony Beatz (1).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Price: $10</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+     
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <p>Check out our pricing options for exclusive and non-exclusive rights.</p>
+
+        
+        <h3>Pay with PayPal</h3>
+        <div id="paypal-button-container"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+        <script>
+            paypal.Buttons().render('#paypal-button-container');
+        </script>
+
+       
+        <h3>Pay with Credit Card</h3>
+        <form action="/charge" method="post" id="payment-form">
+            <div class="form-row">
+                <label for="card-element">Credit or Debit Card</label>
+                <div id="card-element"></div>
+                <div id="card-errors" role="alert"></div>
+            </div>
+            <button type="submit">Submit Payment</button>
+        </form>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            var stripe = Stripe('YOUR_PUBLIC_KEY');
+            var elements = stripe.elements();
+            var cardElement = elements.create('card');
+            cardElement.mount('#card-element');
+        </script>
+
+        
+      <h3>Pay with M-Pesa</h3>
+     <form action="/mpesa-payment" method="post">
+     <label for="mpesa-number">M-Pesa Number (include country code +254):</label>
+     <input type="text" id="mpesa-number" name="mpesa-number" placeholder="+2547XXXXXXXX" required>
+     <button type="submit">Pay with M-Pesa</button>
+     </form>
+     </section>
+
+     <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Waheed Music Official. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
